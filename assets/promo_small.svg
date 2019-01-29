@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="440"
+   height="280"
+   viewBox="0 0 440 280"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="promo_small.svg"
+   inkscape:export-filename="/home/pcon/devel/sfdc-sandboxVersion/assets/promo_small.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="168.98409"
+     inkscape:cy="285.17692"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1059"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-772.36216)">
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#800000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4208"
+       width="440"
+       height="280"
+       x="0"
+       y="772.36218"
+       rx="0"
+       ry="0" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;stroke:#808080;stroke-width:4.02570724;stroke-opacity:1"
+       d="m 184.71273,944.39666 c 28.83184,0 52.21071,24.0749 52.21071,53.7802 0,7.08484 -1.34069,13.82854 -3.75684,20.02324 13.18275,7.9866 22.02854,22.7228 22.02854,39.6184 0,25.3845 -19.97373,45.9934 -44.61183,45.9934 -3.18862,0 -6.30749,-0.372 -9.30662,-1.0267 -7.82555,19.5312 -26.5004,33.2863 -48.28327,33.2863 -18.94103,0 -35.54737,-10.3743 -44.69719,-25.9275 -6.33912,2.8192 -13.319053,4.4067 -20.662353,4.4067 -17.965475,0 -33.810727,-9.3398 -43.203122,-23.5742 -1.200475,0.075 -2.409362,0.086 -3.628706,0.086 -31.9772061,0 -57.931281,-26.6958 -57.931281,-59.6416 0,-32.94582 25.9540749,-59.64165 57.931281,-59.64165 8.59522,0 16.743164,1.92916 24.077502,5.39095 9.150108,-15.55306 25.756186,-25.92753 44.697349,-25.92753 13.18928,0 25.2192,5.03731 34.40882,13.3488 9.56696,-12.30696 24.23265,-20.19432 40.72701,-20.19432 z"
+       id="path4184-1"
+       inkscape:connector-curvature="0"
+       clip-path="none" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FontAwesome;-inkscape-font-specification:FontAwesome;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="418.58209"
+       y="905.78888"
+       id="text4189"><tspan
+         sodipodi:role="line"
+         id="tspan4191"
+         x="418.58209"
+         y="905.78888"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.56448364px;line-height:1;font-family:Interstate-Black;-inkscape-font-specification:Interstate-Black;fill:#ffffff">Sandbox</tspan><tspan
+         sodipodi:role="line"
+         x="418.58209"
+         y="950.35339"
+         id="tspan4193"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.56448364px;line-height:1;font-family:Interstate-Black;-inkscape-font-specification:Interstate-Black;fill:#ffffff">Version</tspan></text>
+  </g>
+</svg>

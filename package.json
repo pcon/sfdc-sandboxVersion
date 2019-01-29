@@ -6,7 +6,9 @@
   "scripts": {
     "lint-eslint-chrome": "./node_modules/.bin/eslint chrome/content.js",
     "lint-eslint": "npm run lint-eslint-chrome",
-    "lint": "npm run lint-eslint"
+    "lint": "npm run lint-eslint",
+    "package-chrome": "zip -r chrome.zip chrome",
+    "package": "npm run package-chrome"
   },
   "repository": {
     "type": "git",
