@@ -4,16 +4,34 @@
   "description": "Shows your sandbox version next to your sandbox host",
   "main": "index.js",
   "scripts": {
-    "lint-eslint-chrome": "./node_modules/.bin/eslint src/*.js",
-    "lint-eslint": "npm run lint-eslint-chrome",
-    "lint": "npm run lint-eslint",
+    "lint-eslint": "./node_modules/.bin/eslint src/*.js",
+    "lint-md": "./node_modules/.bin/remark --no-stdout -f *.md .github/ISSUE_TEMPLATE/*.md",
+    "lint": "npm run lint-eslint && npm run lint-md",
+    "package-firefox": "cd dist/firefox && zip -r ../firefox.zip .",
+    "package": "npm run package-firefox",
     "setup": "./node_modules/.bin/bower install",
     "clean": "rm -rf dist",
-    "build": "npm run setup && npm run lint && npm run clean && ./scripts/build.sh"
+    "clean-chrome": "rm -rf dist/chrome",
+    "clean-firefox": "rm -rf dist/firefox",
+    "build-chrome": "npm run clean-chrome && ./scripts/build.sh chrome",
+    "build-firefox": "npm run clean-firefox && ./scripts/build.sh firefox",
+    "build": "npm run setup && npm run lint && npm run build-chrome && npm run build-firefox"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended",
+      [
+        "remark-lint-final-newline",
+        false
+      ]
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pcon/sfdc-sandboxVersion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pcon/sfdc-sandboxVersion/issues"
   },
   "keywords": [
     "salesforce",
@@ -27,6 +45,10 @@
   "homepage": "https://github.com/pcon/sfdc-sandboxVersion#readme",
   "devDependencies": {
     "bower": "^1.8.8",
-    "eslint": "^5.12.1"
+    "eslint": "^5.12.1",
+    "remark": "^10.0.1",
+    "remark-cli": "^6.0.1",
+    "remark-lint": "^6.0.4",
+    "remark-preset-lint-recommended": "^3.0.2"
   }
 }
