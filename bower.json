@@ -1,0 +1,27 @@
+{
+  "name": "sfdc-sandboxversion",
+  "description": "Shows your sandbox version next to your sandbox host",
+  "main": "index.js",
+  "authors": [
+    "Patrick Connelly"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "salesforce",
+    "sandbox"
+  ],
+  "homepage": "https://github.com/pcon/sfdc-sandboxVersion",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "q": "^1.5.1",
+    "axios": "^0.18.0"
+  }
+}

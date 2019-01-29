@@ -4,11 +4,12 @@
   "description": "Shows your sandbox version next to your sandbox host",
   "main": "index.js",
   "scripts": {
-    "lint-eslint-chrome": "./node_modules/.bin/eslint chrome/content.js",
+    "lint-eslint-chrome": "./node_modules/.bin/eslint src/*.js",
     "lint-eslint": "npm run lint-eslint-chrome",
     "lint": "npm run lint-eslint",
-    "package-chrome": "zip -r chrome.zip chrome",
-    "package": "npm run package-chrome"
+    "setup": "./node_modules/.bin/bower install",
+    "clean": "rm -rf dist",
+    "build": "npm run setup && npm run lint && npm run clean && ./scripts/build.sh"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/pcon/sfdc-sandboxVersion#readme",
   "devDependencies": {
+    "bower": "^1.8.8",
     "eslint": "^5.12.1"
   }
 }
