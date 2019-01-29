@@ -1,0 +1,19 @@
+{
+    "name": "Sandbox Version",
+    "version": "1.0",
+    "description": "Shows your sandbox version next to your sandbox host",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.salesforce.com/07E*"
+            ],
+            "js": [
+                "jquery.min.js",
+                "axios.min.js",
+                "q.js",
+                "content.js"
+            ]
+        }
+    ],
+    "manifest_version": 2
+}

@@ -1,0 +1,28 @@
+{
+  "name": "sfdc-sandboxversion",
+  "version": "1.0.0",
+  "description": "Shows your sandbox version next to your sandbox host",
+  "main": "index.js",
+  "scripts": {
+    "lint-eslint-chrome": "./node_modules/.bin/eslint chrome/content.js",
+    "lint-eslint": "npm run lint-eslint-chrome",
+    "lint": "npm run lint-eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcon/sfdc-sandboxVersion.git"
+  },
+  "keywords": [
+    "salesforce",
+    "sandbox"
+  ],
+  "author": "Patrick Connelly",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/pcon/sfdc-sandboxVersion/issues"
+  },
+  "homepage": "https://github.com/pcon/sfdc-sandboxVersion#readme",
+  "devDependencies": {
+    "eslint": "^5.12.1"
+  }
+}
