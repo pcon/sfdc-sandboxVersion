@@ -19,21 +19,23 @@ ICON_MAP[RELEASE_WINTER] = ICON_WINTER;
  * Gets the sandbox table
  * @returns {Object} The table containing the sandbox information
  */
-function getSandboxTable() {
+var getSandboxTable = function () {
     return jQuery(`table[id^=${SELECTOR_TABLE}]`);
-}
+};
 
 /**
  * Acts on each of the locations
  * @param {function} callback The method to call with each of the spans
  * @returns {undefined}
  */
-function actOnLocations(callback) {
+var actOnLocations = function (callback) {
     getSandboxTable().find(`span[id$=${SELECTOR_LOCATION}]`).each(callback);
-}
+};
 
 /**
  * Finds all the hosts
+ * @param {Number} index Unused
+ * @param {Object} data The span to use when testing
  * @returns {Promise} A promise for an array of all the instance names
  */
 var findHosts = function () {
@@ -54,9 +56,9 @@ var findHosts = function () {
  * @param {string} instance_name The instance name
  * @returns {string} The status API URL
  */
-function getURL(instance_name) {
+var getURL = function (instance_name) {
     return `https://api.status.salesforce.com/v1/instances/${instance_name}/status/preview`;
-}
+};
 
 /**
  * Gets the status data about a instance
@@ -99,8 +101,6 @@ var getAllHostdata = function (instance_names) {
             });
 
             deferred.resolve(instance_map);
-        }).catch(function (error) {
-            deferred.reject(error);
         });
 
     return deferred.promise;
@@ -111,20 +111,20 @@ var getAllHostdata = function (instance_names) {
  * @param {String} releaseVersion The release version
  * @returns {String} The icon
  */
-function getIconSymbol(releaseVersion) {
-    var releaseName = releaseVersion.toLowerCase().split(' ')[0];
+var getIconSymbol = function (releaseVersion) {
+    var releaseName = typeof releaseVersion === 'undefined' ? '' : releaseVersion.toLowerCase().split(' ')[0];
 
     return releaseName in ICON_MAP ? ICON_MAP[releaseName] : ICON_UNKNOWN;
-}
+};
 
 /**
  * Gets the HTML for the location column
  * @param {Object} instance_data The instance data
  * @returns {string} The HTML to display
  */
-function getLocationHTML(instance_data) {
+var getLocationHTML = function (instance_data) {
     return `<span title="${instance_data.releaseVersion}">${getIconSymbol(instance_data.releaseVersion)}</span> ${instance_data.key}`;
-}
+};
 
 /**
  * Enrich the page with the host data
@@ -136,14 +136,47 @@ var enrichPage = function (instance_map) {
 
     actOnLocations(function () {
         var instance = jQuery(this).text();
-        jQuery(this).html(getLocationHTML(instance_map[instance]));
-    });
 
-    deferred.resolve();
+        var unknown_instance = {
+            releaseVersion: 'Unknown',
+            key: instance
+        };
+
+        var instance_data = instance in instance_map ? instance_map[instance] : unknown_instance;
+        jQuery(this).html(getLocationHTML(instance_data));
+
+        deferred.resolve();
+    });
 
     return deferred.promise;
 };
 
-findHosts()
-    .then(getAllHostdata)
-    .then(enrichPage);
+/**
+ * Runs all the code
+ * @returns {undefined}
+ */
+var runExtension = function () {
+    var deferred = Q.defer();
+
+    findHosts()
+        .then(getAllHostdata)
+        .then(enrichPage)
+        .then(deferred.resolve);
+
+    return deferred.promise;
+};
+
+jQuery(document).ready(runExtension);
+
+if (typeof module !== 'undefined') {
+    module.exports = {
+        enrichPage: enrichPage,
+        findHosts: findHosts,
+        getAllHostdata: getAllHostdata,
+        getHostdata: getHostdata,
+        getIconSymbol: getIconSymbol,
+        getLocationHTML: getLocationHTML,
+        getURL: getURL,
+        runExtension: runExtension
+    };
+}

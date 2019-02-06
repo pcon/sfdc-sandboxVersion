@@ -4,20 +4,22 @@
   "description": "Shows your sandbox version next to your sandbox host",
   "main": "index.js",
   "scripts": {
-    "lint-eslint": "./node_modules/.bin/eslint src/*.js",
+    "build-all": "npm run build-chrome && npm run build-firefox",
+    "build-chrome": "npm run clean-chrome && ./scripts/build.sh chrome",
+    "build-firefox": "npm run clean-firefox && ./scripts/build.sh firefox",
+    "build": "npm run setup && npm run lint && npm run build-all && npm run package",
+    "clean-chrome": "rm -rf dist/chrome dist/chrome.zip",
+    "clean-firefox": "rm -rf dist/firefox dist/firefox.zip",
+    "clean": "rm -rf dist",
+    "coverage": "./node_modules/.bin/jest --coverage --coverageReporters=text-lcov | ./node_modules/.bin/coveralls",
+    "lint-eslint": "./node_modules/.bin/eslint src/*.js tests/*.js __mocks__/*.js",
     "lint-md": "./node_modules/.bin/remark --no-stdout -f *.md .github/ISSUE_TEMPLATE/*.md",
     "lint": "npm run lint-eslint && npm run lint-md",
     "package-chrome": "cd dist/chrome && zip -r ../chrome.zip .",
     "package-firefox": "cd dist/firefox && zip -r ../firefox.zip .",
     "package": "npm run package-chrome && npm run package-firefox",
     "setup": "./node_modules/.bin/bower install",
-    "clean": "rm -rf dist",
-    "clean-chrome": "rm -rf dist/chrome dist/chrome.zip",
-    "clean-firefox": "rm -rf dist/firefox dist/firefox.zip",
-    "build-chrome": "npm run clean-chrome && ./scripts/build.sh chrome",
-    "build-firefox": "npm run clean-firefox && ./scripts/build.sh firefox",
-    "build-all": "npm run build-chrome && npm run build-firefox",
-    "build": "npm run setup && npm run lint && npm run build-all && npm run package"
+    "test": "./node_modules/.bin/jest"
   },
   "remarkConfig": {
     "plugins": [
@@ -27,6 +29,13 @@
         false
       ]
     ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "testURL": "http://localhost/"
   },
   "repository": {
     "type": "git",
@@ -43,8 +52,13 @@
   },
   "homepage": "https://github.com/pcon/sfdc-sandboxVersion#readme",
   "devDependencies": {
+    "axios": "^0.18.0",
     "bower": "^1.8.8",
+    "coveralls": "^3.0.2",
     "eslint": "^5.12.1",
+    "jest": "^24.0.0",
+    "jquery": "^3.3.1",
+    "q": "^1.5.1",
     "remark": "^10.0.1",
     "remark-cli": "^6.0.1",
     "remark-lint": "^6.0.4",
