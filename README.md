@@ -1,7 +1,8 @@
 # Sandbox Versions
 [![Build Status](https://travis-ci.org/pcon/sfdc-sandboxVersion.svg?branch=master)](https://travis-ci.org/pcon/sfdc-sandboxVersion)
-[![Code Climate](https://codeclimate.com/github/pcon/sfdc-sandboxVersion/badges/gpa.svg)](https://codeclimate.com/github/pcon/sfdc-sandboxVersion)
 [![Coverage Status](https://img.shields.io/coveralls/github/pcon/sfdc-sandboxVersion.svg)](https://coveralls.io/github/pcon/sfdc-sandboxVersion?branch=master)
+[![Code Climate](https://codeclimate.com/github/pcon/sfdc-sandboxVersion/badges/gpa.svg)](https://codeclimate.com/github/pcon/sfdc-sandboxVersion)
+[![Code Climate](https://api.codeclimate.com/v1/badges/c899d1fefb44c1466675/test_coverage)](https://codeclimate.com/github/pcon/sfdc-sandboxVersion/test_coverage)
 
 *Shows your sandbox version next to your sandbox host*
 
