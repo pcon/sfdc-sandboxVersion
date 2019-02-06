@@ -11,6 +11,7 @@
     "clean-chrome": "rm -rf dist/chrome dist/chrome.zip",
     "clean-firefox": "rm -rf dist/firefox dist/firefox.zip",
     "clean": "rm -rf dist",
+    "coverage": "./node_modules/.bin/jest --coverage --coverageReporters=text-lcov | ./node_modules/.bin/coveralls",
     "lint-eslint": "./node_modules/.bin/eslint src/*.js tests/*.js __mocks__/*.js",
     "lint-md": "./node_modules/.bin/remark --no-stdout -f *.md .github/ISSUE_TEMPLATE/*.md",
     "lint": "npm run lint-eslint && npm run lint-md",

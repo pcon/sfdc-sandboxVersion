@@ -9,5 +9,5 @@ script:
      - npm run test
 
 after_script:
-     - cat coverage/coverage-final.json | ./node_modules/.bin/coveralls
+     - npm run coverage
      - ./cc-test-reporter after-build -t lcov --debug --exit-code $TRAVIS_TEST_RESULT
