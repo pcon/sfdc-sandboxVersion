@@ -1,6 +1,14 @@
 language: node_js
 node_js:
      - "8.9"
+before_install:
+     - nvm install
+     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+     - chmod +x ./cc-test-reporter
 script:
      - npm run lint
-     - npm run coverage
+     - npm run test
+
+after_script:
+     - cat coverage/coverage-final.json | ./node_modules/.bin/coveralls
+     - ./cc-test-reporter after-build -t lcov --debug --exit-code $TRAVIS_TEST_RESULT
