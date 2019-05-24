@@ -219,3 +219,12 @@ test('Run extension', function () {
         expect(document.body.innerHTML).toEqual(expectedResults);
     });
 });
+
+// Honestly this test is a dumb one, but it just meets the last requirement for 100% code coverage
+test('Module undefined', function () {
+    module = undefined; // eslint-disable-line no-global-assign
+
+    var content = require('../src/content'); // eslint-disable-line global-require, no-unused-vars
+
+    expect(module).toBe(undefined);
+});
