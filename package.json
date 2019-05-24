@@ -1,13 +1,13 @@
 {
   "name": "sfdc-sandboxversion",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Shows your sandbox version next to your sandbox host",
   "main": "index.js",
   "scripts": {
     "build-all": "npm run build-chrome && npm run build-firefox",
     "build-chrome": "npm run clean-chrome && ./scripts/build.sh chrome",
     "build-firefox": "npm run clean-firefox && ./scripts/build.sh firefox",
-    "build": "npm run setup && npm run lint && npm run build-all && npm run package",
+    "build": "npm run clean && npm run setup && npm run lint && npm run build-all && npm run package",
     "clean-chrome": "rm -rf dist/chrome dist/chrome.zip",
     "clean-firefox": "rm -rf dist/firefox dist/firefox.zip",
     "clean": "rm -rf dist",
